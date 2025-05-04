@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    
+    <title>Egyptian Museum Gallery</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        }
+        * {
+    text-decoration: none;
+}
+.navbar { 
+    position: static;
+    top: 0;
+    /* background: #7d7d7d; */
+    background-color: transparent;
+    backdrop-filter:blur(10px);
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a {
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    cursor: default;
+}
+li {
+    list-style: none;
+    display: inline-block;
+}
+li a {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+button {
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+button a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+button:hover {
+    background-color: white;
+    transition: 0.5s;
+}
+button:hover a {
+    color: black;
+}
+input {
+    padding: 3px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: white;
+}
+::placeholder {
+    color: grey;
+    font-weight: bold;
+    opacity: 1;
+}
+   /* .big-img{
+    height: 400px;
+    width: 100%;
+    background-size: cover ;
+    margin:0px 0px 30px 0px;
+   } */
+    h2{
+        text-align: center;
+        background-color: black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        margin-bottom: 50px;
+        font-style: italic;
+        border: solid 3px beige;
+        border-radius: 10px;
+        padding: 10px;    
+    }
+    .gallery {
+      display: grid; 
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+       gap: 20px; 
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+       transition: transform 0.3s ease; 
+    }
+    .gallery-item:hover {
+       transform: scale(1.02); 
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;   
+    }
+    .info {
+      padding: 15px;
+    }
+    .info h3 {
+      margin: 0 0 5px;
+    }
+    .info p {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">The Grand Egyptian Museum</a></div>
+            <ul>
+                <input type="search" placeholder="Search" name="search">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="ticket.html">Get Ticket</a></li>
+                <button><a href="sign-in.html">Sign in</a></button>
+                <button><a href="sign-up.html">Sign up</a></button>
+            </ul>
+        </div>
+    </nav>
+    <h2>Mummies Section</h2>
+    <!-- <img class="big-img" src="mummy.jpg" alt=""> -->
+
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src=mummy1.jpg alt="">
+      <div class="info">
+        <h3>Statue of King Sekenenre Tao</h3>
+        
+        <p>Seqenenre Tao was a pharaoh of the 17th Dynasty who began the fight against the Hyksos.
+            He played a key role in reviving Egyptian national identity during foreign rule.
+            His violent death in battle made him a symbol of resistance and bravery.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src=mummy2.jpg alt="Statue of king Amenhotep II ">
+      <div class="info">
+        <h3>Statue of king Amenhotep II</h3>
+       
+        <p> Amenhotep II was the seventh pharaoh of Egypt’s 18th Dynasty, ruling around 1427–1401 BCE.
+            He was known for his athletic strength and led successful military campaigns to maintain Egypt’s empire.
+            He continued his father Thutmose III’s expansionist policies and built temples, especially in Karnak. 
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src=mummy3.jpg alt="Statue of king Ahmose I">
+      <div class="info">
+        <h3>Statue of king Ahmose I</h3>
+
+        <p>Ahmose I was the founder of Egypt’s 18th Dynasty and ruled around 1550–1525 BCE.
+            He successfully expelled the Hyksos from Egypt, ending the Second Intermediate Period.
+            Ahmose rebuilt Egypt’s economy and army, and launched campaigns into Nubia and the Levant.
+            His reign marked the beginning of the New Kingdom, Egypt’s most powerful era.
+        </p>
+      </div>
+    </div>
+      
+        <div class="gallery-item">
+          <img src=mummy4.jpg alt="Statue of King Ramses II">
+          <div class="info">
+            <h3>Statue of King Ramses II</h3>
+            <p>Ramses II was the third pharaoh of the 19th Dynasty, ruling for 66 years.
+                He led major battles, including the famous Battle of Kadesh.
+                He signed the first recorded peace treaty in history with the Hittites.
+                Ramses II built great temples like Abu Simbel and is known as Ramses the Great.
+             </p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src=mummy5.jpg alt="Statue of King Seti I">
+          <div class="info">
+            <h3>Statue of King Seti I</h3>
+            <p>Seti I was the second pharaoh of Egypt’s 19th Dynasty, ruling from 1290–1279 BCE.
+                He conducted military campaigns in Syria and Canaan, strengthening Egypt’s empire.
+                Seti I built magnificent temples, particularly at Abydos and Karnak.
+                His tomb in the Valley of the Kings is one of the most beautifully decorated.
+            </p>
+          </div>
+        </div> 
+        <div class="gallery-item">
+          <img src=mummy6.jpg alt="Statue of King Thutmose III">
+          <div class="info">
+            <h3>Statue of King Thutmose III</h3>
+            <p>Thutmose III was the sixth pharaoh of the 18th Dynasty and ruled for over 50 years.
+                He was a brilliant military leader, often called the "Napoleon of ancient Egypt."
+                He expanded Egypt’s empire to its greatest extent through successful campaigns in Asia and Nubia.
+                Thutmose III also promoted art, architecture, and temple building, especially at Karnak.
+            </p>
+          </div>
+        </div> 
+     
+      
+    
+
+    
+
+  </div>
+
+</body>
+</html>
