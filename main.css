@@ -292,3 +292,191 @@ p {
         font-size: 2rem;
     }
 }
+#processionofmummies{
+    width:100%;
+    height:700px;
+    /* background-color: #b8860b; */
+    background-color: wheat;
+    border-radius:30px;
+    
+}
+#barademummies{
+    font-size: 50px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #0f0f0f;
+    color: white;
+
+
+}
+#prmu{
+    width: 500px;
+    font-size: 20px;
+    top: 20px;
+    transform: translate(60px,-510px);
+    padding: 30px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .location {
+    width: 45%;
+  }
+  
+  .location h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .location p {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  #contact {
+    width: 60%;
+    height: auto;
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 10px;
+    transform: translate(-120px);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  #contact h2 {
+    text-transform: lowercase;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  #contact p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .inputs{
+    width: 150%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+  }
+  
+  textarea {
+    width: 350px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 100px;
+    resize: none;
+    margin-bottom: 15px;
+    
+   
+  }
+  
+  #button-inputs {
+    padding: 10px 20px;
+    background-color: #d9a253;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .main-footer{
+  height: 400px;
+  background-image: url(ahramat.jpg);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .footer-logo img {
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    transform: translate(100px,-70px);
+  }
+  
+  .footer-logo h2 {
+    margin: 5px 0;
+    font-size: 80px;
+    transform: translate(-300px,-100px);
+  }
+  
+  .footer-logo h3 {
+    margin: 0;
+    font-size: 40px;
+    transform: translate(-300px,-110px);
+  }
+
+  .social p {
+    margin-bottom: 10px;
+    transform: translate(0,-150px);
+  }
+  
+  .social a img {
+    width: 24px;
+    margin: 0 5px;
+    transform: translate(0,-150px);
+  }
+  footer .copyright {
+    margin-bottom: 30px;
+    font-size: 50px;
+    transform: translate(-20px,-80px);
+
+  }
+  .tick {
+    margin: 50px;
+    padding: 9px;
+    border-radius: 0;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+.up {
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: fixed;
+    margin: 50px;
+    padding: 5px;
+    cursor: pointer;
+}
+.tick:hover  {
+    transition: 0.5s;
+    background-color: white;
+}
+.up:hover {
+    transition: 0.5s;
+    background-color: white;
+}

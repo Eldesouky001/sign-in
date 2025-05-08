@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <title>The Grand Egyptian Museum</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
                 <input type="search" placeholder="Search" name="search">
                 <li><a href="main.html">Home</a></li>
                 <li><a href="About.html">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="ticket.html">Get Ticket</a></li>
                 <button><a href="sign-in.html">Sign in</a></button>
                 <button><a href="sign-up.html">Sign up</a></button>
@@ -25,10 +26,10 @@
     </div>
     <div class="content-section">
         <div class="text-content">
-            <h2 class="main-heading">Welcome to,</h2>
-            <h2 class="main-heading-2"> the Grand Egyptian museum</h2>
-            <p class="lead-paragraph">Discover the world's largest collection of Egyptian antiquities</p>
-           <p>The Grand Egyptian Museum, located near the iconic Pyramids of Giza and the Sphinx, stands as a monumental tribute to Egypt’s 
+            <h2 class="main-heading" data-aos="zoom-in" data-aos-duration="800">Welcome to,</h2>
+            <h2 class="main-heading-2" data-aos="zoom-in" data-aos-duration="800"> the Grand Egyptian museum</h2>
+            <p class="lead-paragraph" data-aos="zoom-in" data-aos-duration="800">Discover the world's largest collection of Egyptian antiquities</p>
+           <p data-aos="zoom-in" data-aos-duration="800">The Grand Egyptian Museum, located near the iconic Pyramids of Giza and the Sphinx, stands as a monumental tribute to Egypt’s 
             rich and ancient history. Envisioned as a global epicentre of Egyptian antiquities, this architectural marvel is set to house 
             an unparalleled collection of over 100,000 artefacts, unveiling the mysteries of the Pharaonic civilization. Designed to 
             merge modernity with historical grandeur, the museum promises a captivating journey through time for visitors. As a testament
@@ -42,24 +43,24 @@
     </div>
 </div>
 <div class="gallery">
-    <div class="card">
+    <div class="card" data-aos="fade-right" data-aos-duration="800">
         <img src=القاعة-الرئيسية-في-مدخل-المتحف-1.jpg alt="القاعة الرئيسية">
         <h2>Main Hall</h2>
         <p>Discover the wonders of ancient Egypt in the Main Hall, featuring the majestic statue of Ramses II.</p>
         <a href="statues.html" class="button">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-left" data-aos-duration="800">
         <img src=tmsal.jpg alt="معرض المومياوات">
         <h2>Mummy Exhibit</h2>
         <p>It contains some of the oldest royal mummies, such as the mummy of King Tutankhamun.</p>
-        <a href="" class="button">Read more</a>
+        <a href="mummy.html" class="button">Read more</a>
     </div>
 </div>
 <div class="museum-container">
-    <div class="title">أكثر من مجرد متحف</div>
+    <div class="title" data-aos="zoom-in" data-aos-duration="800">أكثر من مجرد متحف</div>
     
-    <div class="stats-container">
+    <div class="stats-container" data-aos="zoom-in" data-aos-duration="800">
         <div class="stat-box">
             <div>More than</div>
             <div class="stat-number">180,000</div>
@@ -85,7 +86,84 @@
         </div>
     </div>
     
-    <div class="footer">More than just a museum</div>
+    <div class="footer" data-aos="zoom-in" data-aos-duration="800">More than just a museum</div>
 </div>
+<div id="processionofmummies">
+    <h2 id="barademummies">The Royal Mummies Parade</h2>
+<video data-aos="fade-left" data-aos-duration="800" autoplay muted loop width="800px" style="display: block; margin-left: auto; margin-right: 20px; border-radius: 10px;transform: translate(0,70px);">
+    <source src=mummycut.mp4 type=" video/mp4">
+</video>
+<p id="prmu" data-aos="fade-right" data-aos-duration="800">
+    On April 3rd, 2021, Egypt held a grand event called the Royal Mummies Parade.<br>
+    It was a historic moment that amazed millions around the world.<br>
+    Twenty-two mummies of ancient Egyptian kings and queens were moved with great honor.<br>  
+    The parade started at the Egyptian Museum in Tahrir Square.<br>
+    The mummies were transferred to the National Museum of Egyptian Civilization in Fustat.<br>
+    Each mummy was placed in a golden vehicle designed like a pharaonic coffin.<br>
+    The parade included music, lights, and ancient Egyptian style performances.<br>
+    It showed the world the greatness of Egypt’s history and culture.<br>
+    Millions watched the event live on TV and online.<br>
+    This parade became a symbol of pride for all Egyptians.<br>
+  </p>
+</div>
+<div class="container">
+    <div class="location">
+      <h2>Museum Location</h2>
+      <p>
+        The Egyptian Museum in Cairo (EMC) is one of the most important tourist attractions in Egypt.
+        If you are staying in Cairo, make sure to visit. The museum is located on the northern side of 
+        Tahrir Square, Downtown Cairo.
+      </p>
+      <p><strong>📍 Cairo-Alexandria Desert Road, Kafr Nassar, Haram, Giza Governorate</strong></p>
+      <p><strong>📞 +20 1556312155</strong></p>
+      <p><strong>📧 egyptianmuseum@moant.gov.eg</strong></p>
+    </div>
+      <form>
+        <div id="contact">
+            <h2>contact us</h2>
+            <p>Please fill out the inquiry and information form and we will contact you as soon as possible.</p>
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Name" class="inputs">
+                <input type="email" placeholder="E-mail" class="inputs">
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Phone" class="inputs">
+                <input type="text" placeholder="Subject" class="inputs">
+              </div >
+              <textarea placeholder="Your message"></textarea>
+              <button id="button-inputs"type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="main-footer">
+<div class="footer-content">
+  <div class="social">
+    <p>Follow us</p>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+  </div>
+
+  <div class="footer-logo">
+    <img src=logo-remove.png alt="">
+    <h2>المتحف المصري</h2>
+    <h3>THE EGYPTIAN MUSEUM</h3>
+  </div>
+</div>
+<p class="copyright">© 2025 The Egyptian Museum</p>
+</footer>
+<div class="pos">
+    <button class="tick"><a href="ticket.html">Get ticket</a></button>
+    <button class="up"><a href="#" class="navbar">↑</a></button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
