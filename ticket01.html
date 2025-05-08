@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Museum Tickets</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .ticket-row {
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+        }
+        .ticket-name {
+            flex: 1;
+        }
+        .ticket-price {
+            width: 80px;
+            text-align: right;
+            margin-right: 15px;
+            color: #c00;
+        }
+        input[type="number"] {
+            width: 40px;
+            padding: 5px;
+        }
+        #total {
+            font-size: 18px;
+            text-align: right;
+            margin: 20px 0;
+        }
+        #totalAmount {
+            font-weight: bold;
+            color: #c00;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        #thankYou {
+            text-align: center;
+            margin-top: 20px;
+            color: #090;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Museum Tickets</h1>
+
+    <div class="section">
+        <h2>Egyptians & Arabs</h2>
+        <div class="ticket-row">
+            <div class="ticket-name">Adult (50 EGP)</div>
+            <div class="ticket-price">50 EGP</div>
+            <input type="number" id="local-adult" min="0" value="0">
+        </div>
+        <div class="ticket-row">
+            <div class="ticket-name">Child (25 EGP)</div>
+            <div class="ticket-price">25 EGP</div>
+            <input type="number" id="local-child" min="0" value="0">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Foreign Visitors</h2>
+        <div class="ticket-row">
+            <div class="ticket-name">Adult (200 EGP)</div>
+            <div class="ticket-price">200 EGP</div>
+            <input type="number" id="foreign-adult" min="0" value="0">
+        </div>
+        <div class="ticket-row">
+            <div class="ticket-name">Child (100 EGP)</div>
+            <div class="ticket-price">100 EGP</div>
+            <input type="number" id="foreign-child" min="0" value="0">
+        </div>
+    </div>
+
+    <div>
+        <h3>Visit Date:</h3>
+        <input type="date" id="visitDate">
+    </div>
+
+    <div id="total">
+        Total: <span id="totalAmount">0</span> EGP
+    </div>
+
+    <button onclick="bookTickets()">Book Tickets</button>
+    <div id="thankYou">Thank you for your purchase!</div>
+
+    <script>
+        // Calculate total when any input changes
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('change', calculateTotal);
+        });
+
+        function calculateTotal() {
+            const prices = {
+                'local-adult': 50,
+                'local-child': 25,
+                'foreign-adult': 200,
+                'foreign-child': 100
+            };
+            
+            let total = 0;
+            for (const id in prices) {
+                total += (document.getElementById(id).value || 0) * prices[id];
+            }
+            document.getElementById('totalAmount').textContent = total;
+        }
+
+        function bookTickets() {
+            const date = document.getElementById('visitDate').value;
+            const total = document.getElementById('totalAmount').textContent;
+            
+            if (!date) {
+                alert('Please select a date');
+                return;
+            }
+            if (total == 0) {
+                alert('Please select at least one ticket');
+                return;
+            }
+            
+            document.getElementById('thankYou').style.display = 'block';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                document.getElementById('thankYou').style.display = 'none';
+                document.querySelectorAll('input[type="number"]').forEach(input => {
+                    input.value = 0;
+                });
+                document.getElementById('totalAmount').textContent = '0';
+                document.getElementById('visitDate').value = '';
+            }, 3000);
+        }
+
+        // Set min date to today
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('visitDate').min = today;
+        };
+    </script>
+</body>
+</html>
