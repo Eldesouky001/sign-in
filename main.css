@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -6,9 +7,20 @@ body {
      background-size: cover;*/ 
     /* background-position: center; */
 }
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+.dark{
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+
 .image {
     height: 70vh;
-    background-image: url(edit-edit-bab.png);
+    background-image: url(sliders_en1739101249Banner\ ENG.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -53,6 +65,7 @@ button {
     border-radius: 10px;
     padding: 10px;
     width: 90px;
+    border: beige solid 2px;
 }
 button a {
     color: white;
@@ -62,6 +75,9 @@ button a {
 button:hover {
     background-color: white;
     transition: 0.5s;
+}
+button:hover{
+    color: black;
 }
 button:hover a {
     color: black;
@@ -306,13 +322,12 @@ p {
     border-radius: 20px;
     background-color: #0f0f0f;
     color: white;
-
-
 }
 #prmu{
     width: 500px;
     font-size: 20px;
-    top: 20px;
+    /* position: relative; */
+    top: 50px;
     transform: translate(60px,-510px);
     padding: 30px;
 }
@@ -347,6 +362,8 @@ p {
     padding: 30px;
     border-radius: 10px;
     transform: translate(-120px);
+    position: relative;
+    left: 250px;
   }
   html {
     scroll-behavior: smooth;
@@ -453,7 +470,7 @@ p {
   .tick {
     margin: 50px;
     padding: 9px;
-    border-radius: 0;
+    border-radius: 5px;
     background-color: black;
     color: white;
     position: fixed;

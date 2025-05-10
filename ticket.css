@@ -1,0 +1,169 @@
+        body{
+            background-color: beige;
+        }
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar { 
+            position: sticky;
+            top: 0;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo a {
+            padding: 10px;
+            font-size: 30px;
+            font-weight: 600;
+            color: black;
+            cursor: default;
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+        li a {
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+        .nav-button {
+            background-color: black;
+            margin-left: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90px;
+            border: beige solid 2px;
+        }
+        .nav-button a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .nav-button:hover {
+            background-color: white;
+            transition: 0.5s;
+        }
+        .nav-button:hover {
+            color: black;
+        }
+        .nav-button:hover a {
+            color: black;
+        }
+        .nav-search {
+            padding: 3px;
+            margin: 10px;
+            border-radius: 15px;
+            background-color: white;
+        }
+        ::placeholder {
+            color: grey;
+            font-weight: bold;
+            opacity: 1;
+        }
+
+        body {
+            font-family: Arial;
+            max-width: 100%;
+            margin: 0;
+            padding: 10px;
+        }
+        
+        .content {
+            max-width: 500px;
+            margin: 40px auto; /* Increased top margin for spacing */
+            padding-top: 20px; /* Additional padding */
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px; /* Added bottom margin */
+        }
+        .section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .ticket-row {
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+        }
+        .ticket-name {
+            flex: 1;
+        }
+        .ticket-price {
+            width: 80px;
+            text-align: right;
+            margin-right: 15px;
+            color: #c00;
+        }
+        input[type="number"] {
+            width: 40px;
+            padding: 5px;
+        }
+        #total {
+            font-size: 18px;
+            text-align: right;
+            margin: 20px 0;
+        }
+        #totalAmount {
+            font-weight: bold;
+            color: #c00;
+        }
+        #bookButton {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        #thankYou {
+            text-align: center;
+            margin-top: 20px;
+            color: #090;
+            display: none;
+        }
+        
+        /* Dark mode styles */
+        body.dark {
+            background: #121212;
+            color: #fff;
+        }
+        body.dark .logo a,
+        body.dark li a {
+            color: white;
+        }
+        body.dark .section {
+            border-color: #444;
+            background-color: #222;
+        }
+        body.dark .ticket-price,
+        body.dark #totalAmount {
+            color: #f55;
+        }
+        body.dark input {
+            background-color: #333;
+            color: white;
+        }
+        .dark-mode-btn {
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }

@@ -3,589 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egyptian Museum - Ticket Booking</title>
-    <style>
-        * {
-            text-decoration: none;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        .navbar { 
-    position: sticky;
-    top: 0;
-    /* background: #7d7d7d; */
-    background-color: transparent;
-    backdrop-filter:blur(10px);
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.navdiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo a {
-    padding: 10px;
-    font-size: 30px;
-    font-weight: 600;
-    color: black;
-    cursor: default;
-}
-li {
-    list-style: none;
-    display: inline-block;
-}
-li a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 25px;
-}
-button {
-    background-color: black;
-    margin-left: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 90px;
-}
-button a {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-}
-button:hover {
-    background-color: white;
-    transition: 0.5s;
-}
-button:hover a {
-    color: black;
-}
-input {
-    padding: 3px;
-    margin: 10px;
-    border-radius: 15px;
-    background-color: white;
-}
-::placeholder {
-    color: grey;
-    font-weight: bold;
-    opacity: 1;
-}
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #d4af37;
-            color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        
-        .header p {
-            margin: 10px 0 0;
-            font-size: 1.1em;
-        }
-        
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 30px;
-        }
-        
-        .ticket-section {
-            flex: 2;
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .calendar-section {
-            flex: 1;
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            color: #d4af37;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        
-        .ticket-type {
-            margin-bottom: 30px;
-        }
-        
-        .ticket-option {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #f9f9f9;
-            border-radius: 6px;
-            border-left: 4px solid #d4af37;
-        }
-        
-        .ticket-info {
-            flex: 2;
-        }
-        
-        .ticket-price {
-            flex: 1;
-            text-align: right;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #d4af37;
-        }
-        
-        .ticket-quantity {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            background-color: #d4af37;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        
-        .quantity-input {
-            width: 50px;
-            height: 30px;
-            text-align: center;
-            margin: 0 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        .total-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 6px;
-            text-align: right;
-        }
-        
-        .total-amount {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #d4af37;
-        }
-        
-        .book-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            background-color: #d4af37;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .book-btn:hover {
-            background-color: #c19b2e;
-        }
-        
-        .calendar {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .calendar th {
-            background-color: #d4af37;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        .calendar td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-            cursor: pointer;
-        }
-        
-        .calendar td:hover {
-            background-color: #f5f5f5;
-        }
-        
-        .calendar .current-day {
-            background-color: #d4af37;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .calendar .available {
-            color: #333;
-        }
-        
-        .calendar .unavailable {
-            color: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .month-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .month-title {
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-        
-        .nav-btn {
-            background-color: #d4af37;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="ticket.css">
+    <title>Museum Tickets</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="navdiv">
             <div class="logo"><a href="#">The Grand Egyptian Museum</a></div>
             <ul>
-                <input type="search" placeholder="Search" name="search">
                 <li><a href="main.html">Home</a></li>
                 <li><a href="About.html">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="test1.html">Get Ticket</a></li>
-                <button><a href="sign-in.html">Sign in</a></button>
-                <button><a href="sign-up.html">Sign up</a></button>
+                <li><a href="main.html#contact">Contact</a></li>
+                <li><a href="ticket01.html" target="_blank">Get Ticket</a></li>
+                <button class="nav-button"><a href="sign-in.html" target="_blank">Sign in</a></button>
+                <button class="nav-button"><a href="sign-up.html" target="_blank">Sign up</a></button>
+                <button onclick="document.body.classList.toggle('dark')" class="dark-mode-btn nav-button">Dark Mode</button>
             </ul>
         </div>
     </nav>
-    <div class="header">
-        <h1>Egyptian Museum Ticket Booking</h1>
-        <p>Explore the wonders of ancient Egypt</p>
-    </div>
-    
-    <div class="container">
-        <div class="ticket-section">
-            <h2>Select Your Tickets</h2>
-            
-            <div class="ticket-type">
-                <h3>For Egyptians & Arabs</h3>
-                
-                <div class="ticket-option">
-                    <div class="ticket-info">
-                        <strong>Adult Ticket</strong>
-                        <p>For visitors aged 18 and above</p>
-                    </div>
-                    <div class="ticket-price">
-                        EGP 60
-                    </div>
-                    <div class="ticket-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="text" class="quantity-input" value="0" readonly>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-                
-                <div class="ticket-option">
-                    <div class="ticket-info">
-                        <strong>Student Ticket</strong>
-                        <p>Valid student ID required</p>
-                    </div>
-                    <div class="ticket-price">
-                        EGP 30
-                    </div>
-                    <div class="ticket-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="text" class="quantity-input" value="0" readonly>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ticket-type">
-                <h3>For Foreign Visitors</h3>
-                
-                <div class="ticket-option">
-                    <div class="ticket-info">
-                        <strong>Adult Ticket</strong>
-                        <p>For visitors aged 18 and above</p>
-                    </div>
-                    <div class="ticket-price">
-                        EGP 200
-                    </div>
-                    <div class="ticket-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="text" class="quantity-input" value="0" readonly>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-                
-                <div class="ticket-option">
-                    <div class="ticket-info">
-                        <strong>Student Ticket</strong>
-                        <p>Valid international student ID required</p>
-                    </div>
-                    <div class="ticket-price">
-                        EGP 100
-                    </div>
-                    <div class="ticket-quantity">
-                        <button class="quantity-btn minus">-</button>
-                        <input type="text" class="quantity-input" value="0" readonly>
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="total-section">
-                <p>Total Amount:</p>
-                <div class="total-amount">EGP 0</div>
-            </div>
-            
-            <button class="book-btn">Book Tickets</button>
-        </div>
-        
-        <div class="calendar-section">
-            <h2>Select Visit Date</h2>
-            
-            <div class="month-header">
-                <button class="nav-btn prev">❮</button>
-                <div class="month-title" id="month-title">May 2025</div>
-                <button class="nav-btn next">❯</button>
-            </div>
-            
-            <table class="calendar" id="calendar">
-                <thead>
-                    <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                    </tr>
-                </thead>
-                <tbody id="calendar-body">
 
-                </tbody>
-            </table>
-            
-            <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 6px;">
-                <p><strong>Opening Hours:</strong></p>
-                <p>9:00 AM - 5:00 PM (Daily)</p>
-                <p><strong>Last Entry:</strong> 4:00 PM</p>
-                <p><strong>Closed:</strong> Eid Al-Fitr, Eid Al-Adha</p>
+    <div class="content">
+        <h1>Museum Tickets</h1>
+
+        <div class="section">
+            <h2>Egyptians & Arabs</h2>
+            <div class="ticket-row">
+                <div class="ticket-name">Adult (50 EGP)</div>
+                <div class="ticket-price">50 EGP</div>
+                <input type="number" id="local-adult" min="0" value="0">
+            </div>
+            <div class="ticket-row">
+                <div class="ticket-name">Child (25 EGP)</div>
+                <div class="ticket-price">25 EGP</div>
+                <input type="number" id="local-child" min="0" value="0">
             </div>
         </div>
+
+        <div class="section">
+            <h2>Foreign Visitors</h2>
+            <div class="ticket-row">
+                <div class="ticket-name">Adult (200 EGP)</div>
+                <div class="ticket-price">200 EGP</div>
+                <input type="number" id="foreign-adult" min="0" value="0">
+            </div>
+            <div class="ticket-row">
+                <div class="ticket-name">Child (100 EGP)</div>
+                <div class="ticket-price">100 EGP</div>
+                <input type="number" id="foreign-child" min="0" value="0">
+            </div>
+        </div>
+
+        <div>
+            <h3>Visit Date:</h3>
+            <input type="date" id="visitDate">
+        </div>
+
+        <div id="total">
+            Total: <span id="totalAmount">0</span> EGP
+        </div>
+
+        <button id="bookButton" onclick="bookTickets()">Book Tickets</button>
+        <div id="thankYou">Thank you for your purchase!</div>
     </div>
-
-    <script>
-
-        let currentDate = new Date();
-        let currentMonth = currentDate.getMonth();
-        let currentYear = currentDate.getFullYear();
-        let selectedDate = new Date(currentDate);
-
-        function generateCalendar(month, year) {
-            const calendarBody = document.getElementById('calendar-body');
-            const monthTitle = document.getElementById('month-title');
-            
-
-            calendarBody.innerHTML = '';
-            
-
-            const monthNames = ["January", "February", "March", "April", "May", "June", 
-                              "July", "August", "September", "October", "November", "December"];
-            monthTitle.textContent = `${monthNames[month]} ${year}`;
-            
-
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            
-
-            const daysInPrevMonth = new Date(year, month, 0).getDate();
-            
-            let date = 1;
-            let nextMonthDate = 1;
-            
-
-            for (let i = 0; i < 6; i++) {
-
-                if (date > daysInMonth) break;
-                
-                const row = document.createElement('tr');
-                
-
-                for (let j = 0; j < 7; j++) {
-                    const cell = document.createElement('td');
-                    
-                    if (i === 0 && j < firstDay) {
-
-                        const prevMonthDay = daysInPrevMonth - (firstDay - j - 1);
-                        cell.textContent = prevMonthDay;
-                        cell.className = 'unavailable';
-                    } else if (date > daysInMonth) {
-
-                        cell.textContent = nextMonthDate;
-                        cell.className = 'unavailable';
-                        nextMonthDate++;
-                    } else {
-                        
-                        cell.textContent = date;
-                        cell.className = 'available';
-                        
-                        
-                        if (date === currentDate.getDate() && 
-                            month === currentDate.getMonth() && 
-                            year === currentDate.getFullYear()) {
-                            cell.classList.add('current-day');
-                        }
-                        
-                        
-                        if (date === selectedDate.getDate() && 
-                            month === selectedDate.getMonth() && 
-                            year === selectedDate.getFullYear()) {
-                            cell.classList.add('current-day');
-                        }
-                        
-                        date++;
-                    }
-                    
-                    row.appendChild(cell);
-                }
-                
-                calendarBody.appendChild(row);
-            }
-        }
-        
-        
-        generateCalendar(currentMonth, currentYear);
-        
-        
-        document.querySelector('.nav-btn.prev').addEventListener('click', function() {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-            generateCalendar(currentMonth, currentYear);
-        });
-        
-        document.querySelector('.nav-btn.next').addEventListener('click', function() {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            generateCalendar(currentMonth, currentYear);
-        });
-        
-        
-        document.getElementById('calendar-body').addEventListener('click', function(e) {
-            if (e.target.classList.contains('available')) {
-                
-                document.querySelectorAll('#calendar-body .current-day').forEach(cell => {
-                    cell.classList.remove('current-day');
-                });
-                
-                        e.target.classList.add('current-day');
-                
-               
-                selectedDate = new Date(currentYear, currentMonth, parseInt(e.target.textContent));
-            }
-        });
-        
-        
-        document.querySelectorAll('.quantity-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const input = this.parentElement.querySelector('.quantity-input');
-                let value = parseInt(input.value);
-                
-                if (this.classList.contains('plus')) {
-                    value++;
-                } else if (this.classList.contains('minus') && value > 0) {
-                    value--;
-                }
-                
-                input.value = value;
-                calculateTotal();
-            });
-        });
-        
-        
-        function calculateTotal() {
-            let total = 0;
-            
-            
-            const egAdultQty = parseInt(document.querySelectorAll('.ticket-quantity .quantity-input')[0].value);
-            const egStudentQty = parseInt(document.querySelectorAll('.ticket-quantity .quantity-input')[1].value);
-            
-            
-            const foreignAdultQty = parseInt(document.querySelectorAll('.ticket-quantity .quantity-input')[2].value);
-            const foreignStudentQty = parseInt(document.querySelectorAll('.ticket-quantity .quantity-input')[3].value);
-            
-            total += egAdultQty * 60;
-            total += egStudentQty * 30;
-            total += foreignAdultQty * 200;
-            total += foreignStudentQty * 100;
-            
-            document.querySelector('.total-amount').textContent = `EGP ${total}`;
-        }
-        
-  
-        document.querySelector('.book-btn').addEventListener('click', function() {
-            const total = document.querySelector('.total-amount').textContent;
-            const date = selectedDate.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-            
-            if (total === 'EGP 0') {
-                alert('Please select at least one ticket');
-                return;
-            }
-            
-            alert(`Booking confirmed for ${date}\nTotal: ${total}\n\nThank you for your booking!`);
-        });
-    </script>
+    <script src="ticket.js"></script>
 </body>
 </html>

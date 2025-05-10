@@ -10,6 +10,15 @@
       background: #f5f5f5;
       margin: 0;
     }
+    body.dark {
+  background: #121212;
+  color: #fff;
+}
+.dark{
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
     * {
     text-decoration: none;
 }
@@ -59,6 +68,9 @@ button a {
 button:hover {
     background-color: white;
     transition: 0.5s;
+}
+button:hover {
+  color: black;
 }
 button:hover a {
     color: black;
@@ -112,6 +124,24 @@ input {
       font-size: 14px;
       margin-top: 10px;
     }
+    html {
+      scroll-behavior: smooth;
+    }
+    .up {
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: fixed;
+    margin: 50px;
+    padding: 5px;
+    cursor: pointer;
+}
+.up:hover {
+    transition: 0.5s;
+    background-color: white;
+}
   </style>
 </head>
 <body>
@@ -122,10 +152,11 @@ input {
                 <input type="search" placeholder="Search" name="search">
                 <li><a href="main.html">Home</a></li>
                 <li><a href="About.html">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Get Ticket</a></li>
+                <li><a href="main.html#contact">Contact</a></li>
+                <li><a href="ticket01.html">Get Ticket</a></li>
                 <button><a href="sign-in.html">Sign in</a></button>
                 <button><a href="sign-up.html">Sign up</a></button>
+                <button onclick="document.body.classList.toggle('dark')" class="dark">Dark Mode</button>
             </ul>
         </div>
     </nav>
@@ -212,6 +243,9 @@ input {
     
 
   </div>
+<div class="pos">
+  <button class="up"><a href="#" class="navbar">↑</a></button>
+</div>
 
 </body>
 </html>
